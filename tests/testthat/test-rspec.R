@@ -8,7 +8,9 @@ test_that("plot.rspec", {
   expect_identical({plot(sicalis, type = "overlay")}, {plot(sicalis)})
   expect_doppelganger("plot.rspec-stack", plot(sicalis, type = "stack"))
   expect_doppelganger("plot.rspec-select", plot(sicalis, select = 2))
-  expect_doppelganger("plot.rspec-heatmap", plot(sicalis, type = "heatmap"))
+
+  # svg doesn't work well with gradients
+  # expect_doppelganger("plot.rspec-heatmap", plot(sicalis, type = "heatmap"))
 
 })
 
