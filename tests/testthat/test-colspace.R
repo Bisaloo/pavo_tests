@@ -39,7 +39,7 @@ test_that("cie", {
   cielch_sicalis <- colspace(vismodel(sicalis, visual = "cie10"), space = "cielch")
   cielab_sicalis <- colspace(vismodel(sicalis, visual = "cie10"), space = "cielab")
 
-  expect_doppelganger("ciexyz", plot(ciexyz_sicalis, ciebg = FALSE))
+#  expect_doppelganger("ciexyz", plot(ciexyz_sicalis, ciebg = FALSE))
   expect_doppelganger("cielch", plot(cielch_sicalis))
   expect_doppelganger("cielab", plot(cielab_sicalis))
 
