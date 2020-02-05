@@ -10,3 +10,6 @@ addons:
     packages:
     - libmagick++-dev
     - libglu1-mesa-dev
+
+before_script:
+  - Rscript -e 'remotes::install_github("rmaia/pavo", dependencies = TRUE)'
