@@ -29,6 +29,8 @@ test_that("colspace", {
   expect_doppelganger("tetraplot", plot(tcs_sicalis, col = spec2rgb(sicalis)))
   expect_identical(plot(tcs_sicalis), tetraplot(tcs_sicalis))
 
+  expect_doppelganger("projplot", projplot(tcs_sicalis))
+
   tri_sicalis <- colspace(vismodel(sicalis, visual = "apis"))
 
   expect_doppelganger("triplot", plot(tri_sicalis, col = spec2rgb(sicalis)))
