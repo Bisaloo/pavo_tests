@@ -47,3 +47,42 @@ test_that("cie", {
 
 })
 
+test_that("cat", {
+
+  cat_sicalis <- colspace(vismodel(sicalis, visual = "musca"), space = "categorical")
+
+  expect_doppelganger("catplot", plot(cat_sicalis))
+
+  expect_identical(plot(cat_sicalis), catplot(cat_sicalis))
+
+})
+
+test_that("seg", {
+
+  seg_sicalis <- colspace(vismodel(sicalis, visual = "segment"))
+
+  expect_doppelganger("segplot", plot(seg_sicalis))
+
+  expect_identical(plot(seg_sicalis), segplot(seg_sicalis))
+
+})
+
+test_that("hexagon", {
+
+  hex_sicalis <- colspace(vismodel(sicalis, visual = "apis", relative = FALSE), space = "hexagon")
+
+  expect_doppelganger("hexagon", plot(hex_sicalis))
+
+  expect_identical(plot(hex_sicalis), hexplot(hex_sicalis))
+
+})
+
+test_that("coc", {
+
+  coc_sicalis <- colspace(vismodel(sicalis, visual = "apis", relative = FALSE, qcatch = "Ei", vonkries = TRUE), space = "coc")
+
+  expect_doppelganger("cocplot", plot(coc_sicalis))
+
+  expect_identical(plot(coc_sicalis), cocplot(coc_sicalis))
+
+})
